@@ -26,13 +26,16 @@ document.addEventListener('DOMContentLoaded', () => {
   function updateHeader() {
     const scrollY = window.scrollY;
     const heroBottom = heroSection ? heroSection.offsetHeight - 100 : 300;
+    const bottomNav = document.querySelector('.mobile-bottom-nav');
 
     if (scrollY > heroBottom) {
       header.classList.remove('header--transparent');
       header.classList.add('header--solid');
+      if (bottomNav) bottomNav.classList.add('solid');
     } else {
       header.classList.add('header--transparent');
       header.classList.remove('header--solid');
+      if (bottomNav) bottomNav.classList.remove('solid');
     }
   }
 
